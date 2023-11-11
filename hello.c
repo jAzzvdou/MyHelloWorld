@@ -56,6 +56,6 @@ int	main(void)
 		}
 		timer++;
 	}
-	new[0] = i;
+	new[0] = i - 1;
 	printer(str, new, 1);
 }
