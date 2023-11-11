@@ -33,9 +33,10 @@ void	printer(char *str, char *new, int position)
 	printer(str, new, position + 1);
 }
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	char	str[] = "Hello World!";
+	(void)argc;
+	char	*str = argv[1];
 	char	new[strsize(str)];
 	int	max = strsize(str);
 	int	timer = 0;
