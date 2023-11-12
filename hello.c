@@ -9,7 +9,7 @@ static int	strsize(char *str)
 	return (i);
 }
 
-void	printer(char *str, char *new, int position)
+static char	*printer(char *str, char *new, int position)
 {
 	int	i = '\0';
 
@@ -25,11 +25,11 @@ void	printer(char *str, char *new, int position)
 	}
 	new[position] = i - 1;
 	if (new[position] == '\0')
-		return ;
+		return (new);
 	printer(str, new, position + 1);
 }
 
-void	reader(char *str)
+static void	first_letter(char *str)
 {
 	char	new[strsize(str)];
         int	max = strsize(str);
@@ -50,7 +50,7 @@ void	reader(char *str)
 	printer(str, new, 1);
 }
 
-int	main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
 	char	*str;
         int	n = 1;
@@ -60,7 +60,8 @@ int	main(int argc, char *argv[])
 	while (n < c)
 	{
 		str = argv[n];
-		reader(str);
+		first_letter(str);
 		n++;
 	}
+	return (0);
 }
