@@ -49,8 +49,7 @@ static char    *concatenator(int argc, char **argv)
         char    *concatened;
         int     count = 0;
         int     total_size = 0;
-        if (argc <= 1)
-                return NULL;
+
         while (++count < argc)
         {
                 total_size += strlen(argv[count]) + 1;
