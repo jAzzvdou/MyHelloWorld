@@ -15,6 +15,8 @@ static char	*printer(char *str, char *new, int position)
 			i = ' ';
 		if (i != '\0')
 			printf("%s%c\n", new, i);
+		usleep(10000);
+		system("clear");
 		i++;
 	}
 	new[position] = i - 1;
@@ -39,6 +41,8 @@ static void	first_letter(char *str)
 			i = ' ';
 		if (i != '\0')
 			printf("%c\n", i);
+		usleep(10000);
+		system("clear");
 		i++;
 	}
 	new[0] = i - 1;
@@ -79,6 +83,7 @@ int	main(int argc, char **argv)
 		str = concatenator(argc, argv);
 	else
 		str = argv[1];
-	first_letter(str); 
+	first_letter(str);
+	printf("%s\n", str);
 	return (0);
 }
