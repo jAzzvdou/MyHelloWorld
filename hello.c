@@ -72,6 +72,8 @@ int	main(int argc, char **argv)
 {
 	char	*str;
 
+	if (argc < 2)
+		return (0);
 	if (argc > 2)
 		str = concatenator(argc, argv);
 	else
