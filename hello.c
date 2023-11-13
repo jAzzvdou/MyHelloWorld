@@ -21,6 +21,7 @@ static char	*printer(char *str, char *new, int position)
 	if (new[position] == '\0')
 		return (new);
 	printer(str, new, position + 1);
+	return (0);
 }
 
 static void	first_letter(char *str)
