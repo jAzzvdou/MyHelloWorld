@@ -1,13 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-
-static int	strsize(char *str)
-{
-	int	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include <string.h>
 
 static char	*printer(char *str, char *new, int position)
 {
@@ -31,8 +24,8 @@ static char	*printer(char *str, char *new, int position)
 
 static void	first_letter(char *str)
 {
-	char	new[strsize(str)];
-        int	max = strsize(str);
+	char	new[strlen(str)];
+        int	max = strlen(str);
         int	i = '\0';
 
 	while (max--)
@@ -53,15 +46,9 @@ static void	first_letter(char *str)
 int	main(int argc, char **argv)
 {
 	char	*str;
-        int	n = 1;
-        int	c = argc;
 
 	(void)argc;
-	while (n < c)
-	{
-		str = argv[n];
-		first_letter(str);
-		n++;
-	}
+	str = argv[1];
+	first_letter(str);
 	return (0);
 }
