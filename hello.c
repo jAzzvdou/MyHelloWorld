@@ -26,7 +26,7 @@ static char	*printer(char *str, char *new, int position)
 	return (0);
 }
 
-static void	first_letter(char *str)
+static void	print_first_letter(char *str)
 {
 	char	new[strlen(str)];
         int	max = strlen(str);
@@ -49,7 +49,7 @@ static void	first_letter(char *str)
 	printer(str, new, 1);
 }
 
-static char    *concatenator(int argc, char **argv)
+static char    *argvs_concatenator(int argc, char **argv)
 {
         char    *concatened;
         int     count = 0;
@@ -80,10 +80,10 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	if (argc > 2)
-		str = concatenator(argc, argv);
+		str = argvs_concatenator(argc, argv);
 	else
 		str = argv[1];
-	first_letter(str);
+	print_first_letter(str);
 	printf("%s\n", str);
 	return (0);
 }
