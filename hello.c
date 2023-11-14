@@ -16,7 +16,7 @@ static char	*printer(char *str, char *new, int position)
 		if (i != '\0')
 			printf("%s%c\n", new, i);
 		usleep(10000);
-		system("clear");
+		printf("\033[H\033[J");
 		i++;
 	}
 	new[position] = i - 1;
@@ -42,7 +42,7 @@ static void	first_letter(char *str)
 		if (i != '\0')
 			printf("%c\n", i);
 		usleep(10000);
-		system("clear");
+		printf("\033[H\033[J");
 		i++;
 	}
 	new[0] = i - 1;
